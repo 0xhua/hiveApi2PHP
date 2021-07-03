@@ -1,6 +1,8 @@
 <?php
 require_once './vendor/stefangabos/zebra_curl/Zebra_cURL.php';
-
+/**
+ * https://app.swaggerhub.com/apis/HiveOS/public/2.1-beta
+*/
 
 class hiveApi2
 {
@@ -42,36 +44,10 @@ class hiveApi2
                 )), function ($result) {
             if ($result->response[1] == CURLE_OK) {
                 if ($result->info['http_code'] == 200) {
-                    /**
-                     * STATUS 200
-                     {
-                       "access_token": "string",
-                       "token_type": "bearer",
-                       "expires_in": 0
-                      }*/
                     @$this->result=json_decode($result->body);
                 }elseif ($result->info['http_code'] == 403){
-                    /**
-                     * STATUS 403
-                    	Not allowed for authenticated users
-                    */
                     @$this->result=json_decode($result->body, true);
                 }elseif ($result->info['http_code'] == 422){
-                    /**
-                     * STATUS 422
-                    	{
-                          "message": "The given data was invalid.",
-                          "errors": {
-                            "field1": [
-                              "The field1 is required"
-                            ],
-                            "field2": [
-                              "The field2 must be a string",
-                              "The field2 must be 6 characters length"
-                            ]
-                          }
-                        }
-                    */
                     @$this->result=json_decode($result->body, true);
                 } else trigger_error('Server responded with code ' . $result->info['http_code'], E_USER_ERROR);
             } else trigger_error('cURL responded with: ' . $result->response[0], E_USER_ERROR);
@@ -90,17 +66,8 @@ class hiveApi2
             var_dump($result);
             if ($result->response[1] == CURLE_OK) {
                 if ($result->info['http_code'] == 401) {
-                    /**
-                     * STATUS 401
-                    {
-                    "message": "Unauthenticated."
-                    }*/
                     @$this->result=json_decode($result->body, true);
                 }elseif ($result->info['http_code'] == 204){
-                    /**
-                     * STATUS 204
-                    Successful logout
-                     */
                     @$this->result=json_decode($result->body, true);
                 } else trigger_error('Server responded with code ' . $result->info['http_code'], E_USER_ERROR);
             } else trigger_error('cURL responded with: ' . $result->response[0], E_USER_ERROR);
