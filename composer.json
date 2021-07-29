@@ -1,0 +1,7 @@
+{
+    "require": {
+        "stefangabos/zebra_curl": "^1.5",
+      "ext-curl": "*",
+      "ext-json": "*"
+    }
+}

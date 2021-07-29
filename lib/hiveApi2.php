@@ -1,4 +1,5 @@
 <?php
+namespace hiveApi2PHP{
 require_once './vendor/stefangabos/zebra_curl/Zebra_cURL.php';
 /**
  * https://app.swaggerhub.com/apis/HiveOS/public/2.1-beta
@@ -56,7 +57,7 @@ class hiveApi2
         return $this->result;
     }
 
-    private function logout($token){
+    private function logout(string $token){
         $curl = new Zebra_cURL();
         $curl->ssl(false);
         $curl->option(CURLOPT_HTTPHEADER,[
@@ -74,4 +75,5 @@ class hiveApi2
         });
         return $this->result;
     }
+}
 }

@@ -1,0 +1,60 @@
+{
+    "packages": [
+        {
+            "name": "stefangabos/zebra_curl",
+            "version": "1.5.1",
+            "version_normalized": "1.5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stefangabos/Zebra_cURL.git",
+                "reference": "47a67b8fd6299f99aa7297ec6c230a039c3ca832"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stefangabos/Zebra_cURL/zipball/47a67b8fd6299f99aa7297ec6c230a039c3ca832",
+                "reference": "47a67b8fd6299f99aa7297ec6c230a039c3ca832",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2021-04-30T21:22:34+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "Zebra_cURL.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Stefan Gabos",
+                    "email": "contact@stefangabos.ro",
+                    "homepage": "https://github.com/stefangabos",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A high performance cURL PHP library allowing the running of multiple requests at once, asynchronously",
+            "homepage": "https://github.com/stefangabos/Zebra_cURL",
+            "keywords": [
+                "asynchronous",
+                "curl",
+                "libcurl",
+                "php",
+                "request",
+                "wrapper"
+            ],
+            "support": {
+                "issues": "https://github.com/stefangabos/Zebra_cURL/issues",
+                "source": "https://github.com/stefangabos/Zebra_cURL/tree/1.5.1"
+            },
+            "install-path": "../stefangabos/zebra_curl"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
